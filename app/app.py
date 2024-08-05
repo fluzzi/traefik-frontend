@@ -24,7 +24,7 @@ def get_defaults(global_configs):
         'DEFAULT_GROUP': global_configs.get('default_group', 'Applications'),
         'DEFAULT_GROUP_ICON': global_configs.get('group_icon', 'fas fa-box'),
         'DEFAULT_GROUP_COLLAPSED': global_configs.get('group_collapsed', 'false'),
-        'DEFAULT_TITLE': global_configs.get('title', 'Traefik Routers'),
+        'DEFAULT_TITLE': global_configs.get('title', 'Traefik Frontend'),
         'DEFAULT_ROUTER_ICON': global_configs.get('router_icon', 'fas fa-bars'),
         'DEFAULT_PROTOCOL': global_configs.get('entrypoint', 'http'),
         'DEFAULT_TARGET': global_configs.get('target', '_blank'),
