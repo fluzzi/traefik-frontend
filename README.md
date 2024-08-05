@@ -218,6 +218,13 @@ colors:
 
    Open your browser and navigate to `http://<your-docker-host-ip>:5000`.
 
+### Keyboard Functionality
+
+- Press `/` to focus on the search bar.
+- Use the `up` and `down` arrow keys to navigate through the search results.
+- Press `Enter` to open the selected router link.
+- Press `Escape` to exit the search mode.
+
 ## Application Overview
 
 ### Application Structure
