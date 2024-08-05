@@ -1,0 +1,26 @@
+colors:
+  light:
+    background: "#f0f0f0"
+    title-text: "#e0e0e0"
+    icons: "#333"
+    search-bar-bg: "#f0f0f0"
+    icon-bg: "#f0f0f033"
+    icon-hover-bg: "#f0f0f066"
+    router-bg: "#ffffff"
+    router-hover-shadow: "#00000033"
+    router-text: "#666666"
+    accent: "#3f51b5"
+
+  dark:
+    background: "#121212"
+    title-text: "#e0e0e0"
+    icons: "#e0e0e0"
+    header-bg: "#1e1e1e"
+    search-bar-bg: "#121212"
+    icon-bg: "#e0e0e033"
+    icon-hover-bg: "#e0e0e066"
+    router-bg: "#1e1e1e"
+    router-hover-shadow: "#ffffff33"
+    router-text: "#e0e0e0"
+    footer-bg: "#1e1e1e"
+    accent: "#bb86fc"

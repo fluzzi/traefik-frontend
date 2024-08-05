@@ -1,0 +1,5 @@
+docker==7.1.0
+Flask==2.3.2
+PyYAML==6.0.1
+Requests==2.32.3
+waitress==2.1.2

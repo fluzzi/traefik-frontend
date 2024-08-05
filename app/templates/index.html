@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/colors.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/components.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='tf.png')  }}" type="image/png"> 
+    <script src="{{ url_for('static', filename='js/fontawesome.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}" defer></script>
+</head>
+<body>
+    <div id="header" class="header">
+        <h1>{{ title }}</h1>
+        <div class="settings">
+            <button class="icon-button" onclick="toggleSettings()"><i class="fas fa-cog"></i></button>
+            <div id="settings-menu" class="settings-menu">
+                <button class="icon-button" onclick="toggleDarkMode()"><i id="theme-icon" class="fas fa-moon"></i></button>
+                <button class="icon-button" onclick="refreshData()"><i class="fas fa-sync-alt"></i></button>
+                <button class="icon-button" onclick="toggleViewMode()"><i class="fas fa-list" id="view-mode-icon"></i></button>
+            </div>
+        </div>
+    </div>
+    <div class="content" id="content">
+        {% for group, data in groups.items() %}
+            <div class="group {% if data.collapsed %}collapsed{% endif %}" id="{{ group }}" data-collapsed="{{ data.collapsed }}">
+                <h2 class="group-title" onclick="toggleGroup('{{ group }}')"><i class="{{ data.icon }}"></i> {{ group }}</h2>
+                <div class="router-container">
+                    {% for router in data.routers %}
+                        <div class="router" onclick="window.open('{{ router['protocol'] }}://{{ router['rule'].split('`')[1] }}', '{{ router['target'] }}')">
+                            <i class="{{ router['icon'] }}"></i>
+                            <div>
+                                <h2>{{ router['display_name'] }}</h2>
+                                {% if router['description'] %}
+                                    <p>{{ router['description'] }}</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="footer">
+        <div class="search-bar">
+            <i class="fas fa-search" id="start-search" onclick="searchFocus()"></i>
+            <input type="text" id="search-input" placeholder="Search...">
+            <i class="fas fa-times" id="clear-search" onclick="clearSearch()"></i>
+        </div>
+    </div>
+</body>
+</html>
+

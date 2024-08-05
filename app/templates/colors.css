@@ -1,0 +1,163 @@
+:root {
+    {% for mode, mode_colors in colors.items() %}
+        {% for name, value in mode_colors.items() %}
+            --{{ mode }}-{{ name }}: {{ value }};
+        {% endfor %}
+    {% endfor %}
+}
+
+/* Body */
+body {
+    background-color: var(--light-background);
+    color: var(--light-title-text);
+}
+
+.dark-mode {
+    background-color: var(--dark-background);
+    color: var(--dark-title-text);
+}
+
+/* Header */
+.header {
+    background-color: var(--light-header-bg, var(--light-accent));
+}
+
+.dark-mode .header {
+    background-color: var(--dark-header-bg, var(--dark-accent));
+}
+
+/* Icon Button */
+.icon-button {
+    background-color: var(--light-icon-bg);
+    border: 1px solid var(--light-border, var(--light-accent));
+    color: var(--light-icons);
+}
+
+.icon-button:hover {
+    background-color: var(--light-icon-hover-bg);
+}
+
+.dark-mode .icon-button {
+    background-color: var(--dark-icon-bg);
+    border: 1px solid var(--dark-border, var(--dark-accent));
+    color: var(--dark-icons);
+}
+
+.dark-mode .icon-button:hover {
+    background-color: var(--dark-icon-hover-bg);
+}
+
+/* Group Title */
+.group h2 {
+    color: var(--light-group-text, var(--light-accent));
+}
+
+.dark-mode .group h2 {
+    color: var(--dark-group-text, var(--dark-accent));
+}
+
+/* Router */
+.router {
+    background-color: var(--light-router-bg);
+    color: var(--light-router-text);
+}
+
+.router:hover {
+    box-shadow: 0 4px 8px var(--light-router-hover-shadow);
+}
+
+.router h2 {
+    color: var(--light-router-title, var(--light-accent));
+}
+
+.dark-mode .router h2 {
+    color: var(--dark-router-title, var(--dark-accent));
+}
+
+.dark-mode .router {
+    background-color: var(--dark-router-bg);
+    color: var(--dark-router-text);
+}
+
+.dark-mode .router:hover {
+    box-shadow: 0 4px 8px var(--dark-router-hover-shadow);
+}
+
+/* Group Title Icon */
+.group-title .fa {
+    color: var(--light-group-text, var(--light-accent));
+}
+
+.dark-mode .group-title .fa {
+    color: var(--dark-group-text, var(--dark-accent));
+}
+
+/* Settings Menu Icon */
+.settings-menu .fa {
+    color: var(--light-icons);
+}
+
+.dark-mode .settings-menu .fa {
+    color: var(--dark-icons);
+}
+
+/* Router Icon */
+.router svg {
+    font-size: 26px;
+    color: var(--light-router-title, var(--light-accent));
+}
+
+.dark-mode .router svg {
+    color: var(--dark-router-title, var(--dark-accent));
+}
+
+/* Footer */
+.footer {
+    background-color: var(--light-footer-bg, var(--light-accent));
+}
+
+.dark-mode .footer {
+    background-color: var(--dark-footer-bg, var(--light-accent));
+}
+
+/* Search Bar */
+.search-bar {
+    background-color: var(--light-search-bar-bg);
+}
+
+.dark-mode .search-bar {
+    background-color: var(--dark-search-bar-bg);
+}
+
+.search-bar i {
+    color: var(--light-search-bar-icon, var(--light-accent));
+}
+
+.search-bar svg {
+    color: var(--light-search-bar-icon, var(--light-accent));
+}
+
+.dark-mode .search-bar svg {
+    color: var(--dark-search-bar-icon, var(--dark-accent));
+}
+
+.dark-mode .search-bar i {
+    color: var(--dark-search-bar-icon, var(--dark-accent));
+}
+
+.search-bar input {
+    color: var(--light-search-bar-input, var(--light-accent));
+}
+
+.dark-mode .search-bar input {
+    color: var(--dark-search-bar-input, var(--dark-accent));
+}
+
+/* Selected Router */
+.router.selected {
+    border: 2px solid var(--light-selected-router-border, var(--light-accent));
+}
+
+.dark-mode .router.selected {
+    border: 2px solid var(--dark-selected-router-border, var(--dark-accent));
+}

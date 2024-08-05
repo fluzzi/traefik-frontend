@@ -1,0 +1,229 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.header h1 {
+    margin: 0;
+    flex-grow: 1;
+    text-align: center;
+    font-size: 2em;
+}
+
+.settings {
+    position: relative;
+}
+
+.icon-button {
+    font-size: 24px;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.settings-menu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    flex-direction: column;
+}
+
+.settings-menu.visible {
+    display: flex;
+}
+
+.group {
+    margin-bottom: 15px;  /* Reduced margin between groups */
+}
+
+.group-title {
+    display: inline-block;
+    cursor: pointer;
+    margin-top: 10px;  /* Reduced margin above group title */
+    margin-left: 15px;
+}
+
+.group-icon {
+    margin-right: 8px;
+}
+
+.router-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.router {
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px 15px;  /* Added padding top and bottom */
+    margin: 15px;  /* Added margin between boxes */
+    flex: 1 1 calc(33.333% - 40px);  /* Adjusted for new margin */
+    max-width: calc(33.333% - 40px);  /* Adjusted for new margin */
+    text-align: left;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+.router svg {
+    font-size: 32px;  /* Made the icon bigger */
+    margin-right: 15px;  /* Added padding between icon and text */
+}
+
+.router:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.router h2 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.router div {
+    overflow: hidden;
+}
+
+.router p {
+    font-size: 14px;
+    margin: 5px 0 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.content {
+    padding: 20px;  /* Added padding to the left and right of the webpage */
+    padding-bottom: 60px
+}
+
+/* List mode styles */
+.list-mode .content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.list-mode .group {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 calc(33.333% - 40px);  /* Adjusted for new margin */
+    max-width: calc(33.333% - 40px);  /* Adjusted for new margin */
+    margin: 0 15px 15px 15px;
+}
+
+.list-mode .group-title {
+    margin-left: 0;
+}
+
+.list-mode .router-container {
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.list-mode .router {
+    max-width: 100%;
+    margin: 1px 0;  /* Adjusted margin between routers */
+}
+
+.router:first-child {
+    margin-top: 15px;  /* Adjusted margin between routers */
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 20px;
+    padding: 5px 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 0 20px;
+}
+
+
+.search-bar i {
+    margin-right: 10px;
+}
+
+#clear-search, #start-search {
+    cursor: pointer;
+}
+
+.search-bar input {
+    width: 100%;
+    border: none;
+    background: none;
+    outline: none;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    body:not(.list-mode) .router {
+        flex: 1 1 calc(50% - 40px);  /* Adjusted for new margin */
+        max-width: calc(50% - 40px);  /* Adjusted for new margin */
+    }
+
+    .list-mode .group {
+        flex: 1 1 calc(50% - 40px);  /* Adjusted for new margin */
+        max-width: calc(50% - 40px);  /* Adjusted for new margin */
+    }
+}
+
+@media (max-width: 768px) {
+    body:not(.list-mode) .router {
+        flex: 1 1 calc(50% - 40px);  /* Adjusted for new margin */
+        max-width: calc(50% - 40px);  /* Adjusted for new margin */
+    }
+
+    .list-mode .group {
+        flex: 1 1 calc(50% - 40px);  /* Adjusted for new margin */
+        max-width: calc(50% - 40px);  /* Adjusted for new margin */
+    }
+    .header h1 {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    body:not(.list-mode) .router {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .list-mode .group {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+    .router:first-child {
+        margin-top: 1px;  /* Adjusted margin between routers */
+    }
+    .header h1 {
+        font-size: 1.5em;
+    }
+}
+
