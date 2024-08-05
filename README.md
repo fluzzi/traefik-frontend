@@ -226,6 +226,7 @@ colors:
 project-root/
 ├── Dockerfile
 ├── README.md
+├── LICENSE
 └── app/
     ├── app.py
     ├── colors.yml
